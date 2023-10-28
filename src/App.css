@@ -1,5 +1,8 @@
 .App{
-  padding: 1rem;
+ min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header{

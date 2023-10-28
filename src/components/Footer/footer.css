@@ -1,0 +1,23 @@
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  padding: .5rem 1rem;
+  gap: .5rem;
+}
+
+.footer-link{
+  color: #bcbdd2;
+  font-weight: 600;
+  transition: color .2s linear;
+}
+.footer-link:hover{
+  color: #4d2c4d;
+}
+
+.footer-contacts{
+  display: inline-flex;
+  flex-direction: column;
+}

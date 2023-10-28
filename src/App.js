@@ -3,6 +3,7 @@ import tabs from "./data/tabs.json";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
 import TabsNav from "./components/TabsNav/TabsNav";
 import "./App.css";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="*" element={<Navigate to={tabs[0].id} />} />
         </Routes>
       </main>
+
+      <Footer></Footer>
     </div>
   );
 }
