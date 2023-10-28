@@ -1,3 +1,5 @@
+import React from "react";
+
 const DummyTable = () => {
   return (
     <table>
