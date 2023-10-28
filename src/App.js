@@ -1,17 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import tabs from "./data/tabs.json";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
-import "./App.css";
 import TabsNav from "./components/TabsNav/TabsNav";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="header">
         <TabsNav />
       </header>
 
-      <main>
+      <main className="main">
         <Routes>
           {tabs.map(({ id, path }) => (
             <Route key={id} path={id} element={<LazyLoading path={path} />} />

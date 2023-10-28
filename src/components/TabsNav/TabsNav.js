@@ -1,16 +1,15 @@
 import tabs from "../../data/tabs.json";
 import { NavLink } from "react-router-dom";
+import "./tabsNav.css";
 
 const TabsNav = () => {
   return (
-    <nav>
-      <ul>
-        {tabs.map(({ id, title }) => (
-          <li key={id}>
-            <NavLink to={id}>{title}</NavLink>
-          </li>
-        ))}
-      </ul>
+    <nav className="nav">
+      {tabs.map(({ id, title }) => (
+        <NavLink className="nav-link" key={id} to={id}>
+          {title}
+        </NavLink>
+      ))}
     </nav>
   );
 };

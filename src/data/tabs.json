@@ -1,5 +1,5 @@
 [
-  {"id": "dummyTable", "title": "Dummy Table", "order": 1, "path": "tabsContent/dummyTable.js"},
-  {"id": "dummyChart", "title": "Dummy Chart", "order": 2, "path": "tabsContent/dummyChart.js"},
-  {"id": "dummyList", "title": "Dummy List", "order": 0, "path": "tabsContent/dummyList.js"}
+  {"id": "dummyTable", "title": "Dummy Table", "order": 1, "path": "TabsContent/dummyTable.js"},
+  {"id": "dummyChart", "title": "Dummy Chart", "order": 2, "path": "TabsContent/dummyChart.js"},
+  {"id": "dummyList", "title": "Dummy List", "order": 0, "path": "TabsContent/dummyList.js"}
 ]
