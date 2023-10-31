@@ -1,8 +1,9 @@
-import tabs from "../../data/tabs.json";
 import { NavLink } from "react-router-dom";
 import "./tabsNav.css";
+import useTabsData from "../../utils/fetchData";
 
 const TabsNav = () => {
+  const tabs = useTabsData();
   return (
     <nav className="nav">
       {tabs
