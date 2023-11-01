@@ -35,7 +35,6 @@ function App() {
           {tabs.map(({ id, path }) => (
             <Route key={id} path={id} element={<LazyLoading path={path} />} />
           ))}
-          <Route index element={<Navigate to={defaultTab} />} />
           <Route path="*" element={<Navigate to={defaultTab} />} />
         </Routes>
       </main>
