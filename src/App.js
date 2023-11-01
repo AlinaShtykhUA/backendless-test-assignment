@@ -8,7 +8,7 @@ import {
 import LazyLoading from "./components/LazyLoading/LazyLoading";
 import TabsNav from "./components/TabsNav/TabsNav";
 import Footer from "./components/Footer/Footer";
-import useTabsData from "./utils/fetchData";
+import useTabsData from "./utils/firebase";
 import "./App.css";
 
 function App() {
