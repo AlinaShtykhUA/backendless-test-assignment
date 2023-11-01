@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import "firebase/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 
 const firebaseConfig = {
@@ -12,31 +12,30 @@ const firebaseConfig = {
 };
 
 // Ініціалізація Firebase
-initializeApp.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Отримання доступу до Firestore
-const firestore = initializeApp.firestore();
+const db = getFirestore(app);
 
 export default function useTabsData() {
   const [tabs, setTabs] = useState([]);
 
   useEffect(() => {
-    // Отримання доступу до колекції tabsData в Firestore
-    const tabsCollection = firestore.collection("tabsData");
-
-    // Встановлення слухача для отримання змін у Firestore
-    tabsCollection.onSnapshot((snapshot) => {
+    // Отримання даних з колекції "tabsData" в Firestore
+    const fetchData = async () => {
+      const tabsCollection = collection(db, "tabsData");
+      const querySnapshot = await getDocs(tabsCollection);
       const tabsData = [];
-      snapshot.forEach((doc) => {
-        // Отримання даних кожного документа
-        const data = doc.data();
-        tabsData.push(data);
+
+      querySnapshot.forEach((doc) => {
+        tabsData.push(doc.data());
       });
 
-      // Оновлення стану з отриманими даними
       setTabs(tabsData);
-    });
-  }, []);
+    };
+
+    fetchData();
+  }, [db]);
 
   return tabs;
 }
