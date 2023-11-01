@@ -35,7 +35,7 @@ export default function useTabsData() {
     };
 
     fetchData();
-  }, [db]);
+  }, []);
 
   return tabs;
 }

@@ -1,10 +1,4 @@
-import {
-  Routes,
-  Route,
-  Navigate,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
 import TabsNav from "./components/TabsNav/TabsNav";
 import Footer from "./components/Footer/Footer";
@@ -13,21 +7,16 @@ import "./App.css";
 
 function App() {
   const tabs = useTabsData();
-  const navigate = useNavigate();
   const { tabId } = useParams();
 
   const defaultTab =
     tabId ||
     (tabs.length > 0 ? tabs.sort((a, b) => a.order - b.order)[0].id : null);
 
-  const handleTabClick = (tabId) => {
-    navigate(tabId);
-  };
-
   return (
     <div className="App">
       <header className="header">
-        <TabsNav tabs={tabs} onTabClick={handleTabClick} />
+        <TabsNav tabs={tabs} />
       </header>
 
       <main className="main">
@@ -39,7 +28,7 @@ function App() {
         </Routes>
       </main>
 
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }
