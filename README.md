@@ -1,3 +1,6 @@
+Using React, React Router, and Webpack write a simple client-side app that works like a primitive CMS (content management system).
+The app, upon its start, downloads a JSON file from a well-known path. The JSON file contains a description of tabs that must be rendered in the app.
+
 для сервера json-server --watch db.json
 
 # Getting Started with Create React App
