@@ -6,7 +6,7 @@
 //   useEffect(() => {
 //     async function fetchTabs() {
 //       try {
-//         const response = await fetch("http://localhost:3000/tabsData");
+//         const response = await fetch("tabs.json");
 //         const data = await response.json();
 //         setTabs(data);
 //       } catch (error) {
