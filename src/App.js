@@ -11,12 +11,6 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  tabs.forEach(({ path }) => {
-    console.log(path); //tabsContent/dummyTable.js
-    //tabsContent/dummyChart.js
-    //tabsContent/dummyList.js
-  });
-
   const defaultTab =
     tabs.length > 0 ? tabs.sort((a, b) => a.order - b.order)[0].id : null;
 
@@ -27,7 +21,7 @@ function App() {
 
   useEffect(() => {
     if (!tabFromUrl) {
-      navigate(`/?tab=${defaultTabId}`);
+      navigate(`/?tab=${defaultTabId}`, { replace: true });
     }
   }, [tabFromUrl, defaultTabId, navigate]);
 
@@ -39,9 +33,9 @@ function App() {
 
       <main className="main">
         <Routes>
-          {tabs.map(({ id, path }) => (
-            <Route key={id} to={id} element={<LazyLoading path={path} />} />
-          ))}
+          <Route
+            element={<LazyLoading path={`tabsContent/${defaultTabId}.js`} />}
+          />
         </Routes>
       </main>
       <Footer />
