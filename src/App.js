@@ -33,9 +33,13 @@ function App() {
 
       <main className="main">
         <Routes>
-          <Route
-            element={<LazyLoading path={`tabsContent/${defaultTabId}.js`} />}
-          />
+          {tabs.map(({ id }) => (
+            <Route
+              path="/"
+              key={id}
+              element={<LazyLoading path={`tabsContent/${defaultTabId}.js`} />}
+            />
+          ))}
         </Routes>
       </main>
       <Footer />
