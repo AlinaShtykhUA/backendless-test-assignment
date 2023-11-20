@@ -1,17 +1,15 @@
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LazyLoading from "./components/LazyLoading/LazyLoading";
 import TabsNav from "./components/TabsNav/TabsNav";
 import Footer from "./components/Footer/Footer";
-import useTabsData from "./utils/firebase";
+import useTabsData from "./utils/fetchData";
 import "./App.css";
 
 function App() {
   const tabs = useTabsData();
-  const { tabId } = useParams();
 
   const defaultTab =
-    tabId ||
-    (tabs.length > 0 ? tabs.sort((a, b) => a.order - b.order)[0].id : null);
+    tabs.length > 0 ? tabs.sort((a, b) => a.order - b.order)[0].id : null;
 
   return (
     <div className="App">
